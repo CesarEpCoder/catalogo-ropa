@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administrador — Catálogo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+<header>
+  <div class="brand"><h1>Stock para la chuky</h1><span>Administrador</span></div>
+  <button class="btn btn-outline" id="btnLogout" style="display:none;">Cerrar sesión</button>
+</header>
+
+<main>
+  <div id="loginView" class="login-wrap">
+    <h3>Iniciar sesión</h3>
+    <p>Acceso exclusivo para el administrador del catálogo.</p>
+    <div class="field"><label>Usuario</label><input id="loginUser" autocomplete="username"></div>
+    <div class="field"><label>Contraseña</label><input id="loginPass" type="password" autocomplete="current-password"></div>
+    <button class="btn btn-solid" id="loginBtn" style="width:100%;">Entrar</button>
+    <div class="err" id="loginErr">Usuario o contraseña incorrectos.</div>
+  </div>
+
+  <div id="adminView" style="display:none;">
+    <div class="admin-card">
+      <h3 id="formTitle" style="margin-bottom:20px;">Agregar prenda</h3>
+      <div class="form-grid">
+        <div class="field full">
+          <label>Fotos (hasta 6, la primera es la principal)</label>
+          <div class="upload-box" id="uploadBox">
+            <span id="uploadLabel">Toca para agregar fotos</span>
+          </div>
+          <input type="file" id="fileInput" accept="image/*" multiple style="display:none;">
+          <div class="thumb-grid" id="existingThumbs"></div>
+          <div class="thumb-grid" id="pendingThumbs"></div>
+        </div>
+        <div class="field"><label>Nombre</label><input id="fName" placeholder="Ej: Casaquín manga corta"></div>
+        <div class="field">
+          <label>Categoría</label>
+          <select id="fCat">
+            <option value="uniformes_clinicos">Uniformes clínicos</option>
+            <option value="chaquetas">Chaquetas</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Género</label>
+          <select id="fGender">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+          </select>
+        </div>
+        <div class="field"><label>Talla</label><input id="fSize" placeholder="Ej: M"></div>
+        <div class="field"><label>Color</label><input id="fColor" placeholder="Ej: Celeste"></div>
+        <div class="field"><label>Precio</label><input id="fPrice" type="number" min="0" placeholder="Ej: 18000"></div>
+        <div class="field"><label>Stock (unidades)</label><input id="fStock" type="number" min="0" placeholder="Ej: 6"></div>
+        <div class="field full"><label>Informacion Adicional (opcional)</label><textarea id="fNotes" rows="2"></textarea></div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:18px;">
+        <button class="btn btn-solid" id="saveItem">Guardar prenda</button>
+        <button class="btn btn-outline" id="clearForm">Limpiar</button>
+      </div>
+    </div>
+
+    <div class="admin-card">
+      <h3 style="margin-bottom:14px;">Prendas cargadas ya en el catalogo</h3>
+      <div class="toolbar">
+        <input class="search" id="adminSearch" placeholder="Buscar…">
+        <div class="count" id="adminCount"></div>
+      </div>
+      <div id="adminList"></div>
+    </div>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>

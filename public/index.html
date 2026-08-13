@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de stock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand"><h1>Stock</h1><span>Catálogo</span></div>
+  <button class="btn btn-outline" id="btnQr">Ver QR</button>
+</header>
+
+<main>
+  <div class="crumbs" id="crumbs"></div>
+  <div id="content"></div>
+</main>
+
+<div class="overlay" id="detailOverlay">
+  <div class="panel panel-wide"><button class="panel-close" data-close>×</button><div class="detail" id="detailContent"></div></div>
+</div>
+
+<div class="overlay" id="zoomOverlay">
+  <button class="panel-close zoom-close" data-close>×</button>
+  <div class="zoom-stage" id="zoomStage">
+    <img id="zoomImg">
+  </div>
+  <div class="gallery-thumbs zoom-thumbs" id="zoomThumbs"></div>
+</div>
+
+<div class="overlay" id="qrOverlay">
+  <div class="panel qr-panel">
+    <button class="panel-close" data-close>×</button>
+    <h3>Escanear para ver el catálogo</h3>
+    <div id="qrcode"></div>
+    <div class="qr-url" id="qrUrl"></div>
+    <button class="btn btn-outline" id="copyLink" style="width:100%;">Copiar link</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/catalog.js"></script>
+</body>
+</html>
