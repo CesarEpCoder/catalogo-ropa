@@ -13,13 +13,21 @@
 
 <header>
   <div class="brand"><h1>Stock</h1><span>Catálogo</span></div>
-  <button class="btn btn-outline" id="btnQr">Ver QR</button>
+  <div class="qr-cta">
+    <span class="qr-cta-text">Comparte el catálogo</span>
+    <button class="btn btn-outline" id="btnQr">Ver QR</button>
+  </div>
 </header>
 
 <main>
   <div class="crumbs" id="crumbs"></div>
   <div id="content"></div>
 </main>
+
+<footer class="brands-footer" id="brandsFooter">
+  <p class="brands-caption">Con estas marcas te puedes encontrar en los uniformes</p>
+  <div class="brands-img-wrap"><img src="/img/marcas.jpg" alt="Marcas de uniformes disponibles"></div>
+</footer>
 
 <div class="overlay" id="detailOverlay">
   <div class="panel panel-wide"><button class="panel-close" data-close>×</button><div class="detail" id="detailContent"></div></div>
