@@ -57,14 +57,20 @@ function renderCategoryLevel(){
   document.getElementById('content').innerHTML = `
     <div class="section-grid">
       <button class="section-card" data-cat="uniformes_clinicos">
-        <div class="eyebrow">Sección</div>
-        <h3>Uniformes clínicos</h3>
-        <p>Ver hombre / mujer</p>
+        <div class="section-card-img"><img src="/img/uniformes.jpg" alt="Uniformes clínicos"></div>
+        <div class="section-card-body">
+          <div class="eyebrow">Sección</div>
+          <h3>Uniformes clínicos</h3>
+          <p>Ver hombre / mujer</p>
+        </div>
       </button>
       <button class="section-card" data-cat="chaquetas">
-        <div class="eyebrow">Sección</div>
-        <h3>Chaquetas</h3>
-        <p>Ver hombre / mujer</p>
+        <div class="section-card-img"><img src="/img/chaquetas.jpg" alt="Chaquetas"></div>
+        <div class="section-card-body">
+          <div class="eyebrow">Sección</div>
+          <h3>Chaquetas</h3>
+          <p>Ver hombre / mujer</p>
+        </div>
       </button>
     </div>
   `;
